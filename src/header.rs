@@ -5,7 +5,7 @@ use crate::navbar::*;
 use crate::non_volatile_chunk::NonVolatileChunk;
 
 #[derive(Template)]
-#[template(path = "default_dark/header.html")]
+#[template(path = "default/header.html")]
 pub struct DefaultDarkHeader<'a> {
     pub global_title: &'a str,
     pub global_sub: &'a str,
