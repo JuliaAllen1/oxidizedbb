@@ -2,7 +2,6 @@ use std::fs::{DirBuilder, File};
 use std::io::{Error, Write};
 
 use crate::navbar::*;
-use crate::non_volatile_chunk::NonVolatileChunk;
 
 #[derive(Template)]
 #[template(path = "default/header.html")]
