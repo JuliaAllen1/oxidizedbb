@@ -6,7 +6,7 @@ pub use askama::Template;
 pub struct NavTemplate {
     pub nav_items: Vec<NavItem>,
 }
-
+#[derive(Debug)]
 pub struct NavItem {
     pub name: String,
     pub url: String,
