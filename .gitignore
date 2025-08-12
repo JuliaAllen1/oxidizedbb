@@ -1,2 +1,3 @@
 /target
-/_cache
+_cache/
+Cargo.lock
