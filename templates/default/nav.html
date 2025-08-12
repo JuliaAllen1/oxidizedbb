@@ -1,5 +1,5 @@
 <ul style="list-style-type: none;">
         {% for item in nav_items %}
-        <li style="display:inline;"> <a href="{{item.url}}"></a> {{item.name}} </li>
+        <li style="display:inline;"> <a href="{{item.url|safe}}"> {{item.name|safe}} </a> </li>
         {% endfor %}
 </ul>

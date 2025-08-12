@@ -1,0 +1,6 @@
+[global]
+sitename = "Example Bulletin Board"
+tagline = "Discussion about the example topic."
+
+nav_links = [["Index", "https://example.com/index"], ["All Users", "https://example.com/userlisting"], ["Rules", "https://example.com/rules"], ["Search", "https://example.com/search"]]
+categories = ["Example Writing", "Dummy Text?", "Off-Topic", "Moderation <- $moderator"]
