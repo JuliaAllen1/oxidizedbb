@@ -1,5 +1,7 @@
+pub mod category_list;
 pub mod compile_time_conf;
 pub mod header;
+pub mod index;
 pub mod navbar;
 pub mod non_volatile_chunk;
 
