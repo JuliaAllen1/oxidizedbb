@@ -3,7 +3,7 @@ use std::io::{Error, Write};
 
 use crate::navbar::*;
 
-#[derive(Template)]
+#[derive(Debug, Template)]
 #[template(path = "default/header.html")]
 pub struct DefaultDarkHeader<'a> {
     pub global_title: &'a str,
