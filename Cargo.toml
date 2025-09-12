@@ -4,7 +4,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+argon2 = {version = "0.5.3", features = "getrandom"}
 askama = "0.14.0"
+bbcode = "1.0.2"
+chrono = "0.4.42"
+email_address = "0.2.9"
+rand = "0.9.2"
 serde = "1.0.219"
 sqlx = "0.8.6"
 toml = "0.9.5"
