@@ -1,0 +1,20 @@
+<ul style="list-style-type: none;">
+        {% for category in category_listing %}
+        <li style="display:inline;"> 
+                <div class="category-title">
+                {{category.name|safe}}
+                </div>
+                <div class="forum-table-wrap">
+                        <table class="forum-table">
+                                <tr>
+                                        <th>Forum</th>
+                                        <th>Topics</th>
+                                        <th>Posts</th>
+                                        <th>Last post</th>
+                                </tr>
+                                %forum_table_contents({{category.name | safe }})%
+                        </table>
+                </div>
+         </li>
+        {% endfor %}
+</ul>
