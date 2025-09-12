@@ -1,4 +1,6 @@
+use crate::category_list::*;
 use crate::header::DefaultDarkHeader;
+use crate::index::DefaultIndex;
 use crate::navbar::NavItem;
 use crate::navbar::NavTemplate;
 
@@ -15,6 +17,8 @@ fn slice_first_and_last_char(s: &str) -> &str {
 
 pub fn generate_cached_blocks_by_toml(config_file: toml::Table) -> Option<()> {
     let global_settings = config_file.get("global").unwrap();
+
+    // NAVIGATION
     let nav_array = global_settings
         .get("nav_links")
         .unwrap()
@@ -39,5 +43,31 @@ pub fn generate_cached_blocks_by_toml(config_file: toml::Table) -> Option<()> {
         nav: &generated_navigation_template,
     };
     let _ = DefaultDarkHeader::save_to_disk(&generated_header);
+
+    // CATEGORIES
+    let cat_array = global_settings
+        .get("categories")
+        .unwrap()
+        .as_array()
+        .unwrap();
+    let mut user_configured_categories: Vec<Category> = vec![];
+    for category in cat_array {
+        user_configured_categories.push(Category {
+            name: category.as_str().unwrap().to_owned(),
+        });
+    }
+    let cat_list = DefaultCategoryList {
+        category_listing: user_configured_categories,
+    };
+    let _ = DefaultCategoryList::save_to_disk(&cat_list);
+
+    // INDEX
+    let user_configured_index = DefaultIndex {
+        sitename: generated_header.global_title.to_owned(),
+        header: generated_header,
+        cat_list: cat_list,
+    };
+    let _ = DefaultIndex::save_to_disk(&user_configured_index);
+
     Some(())
 }
