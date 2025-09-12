@@ -1,6 +1,6 @@
 pub use askama::Template;
 
-#[derive(Template)]
+#[derive(Template, Debug)]
 #[template(path = "default/nav.html")]
 
 pub struct NavTemplate {
