@@ -4,6 +4,7 @@ pub mod header;
 pub mod index;
 pub mod navbar;
 pub mod non_volatile_chunk;
+pub mod users;
 
 use std::fs;
 use std::process::exit;
